@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="534.0" prefWidth="955.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Main">
+    <children>
+      <ImageView fitHeight="534.0" fitWidth="955.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Images/BG.jpg" />
+         </image>
+      </ImageView>
+        <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#8a4329de" height="50.0" layoutY="470.0" stroke="BLACK" strokeType="INSIDE" width="955.0" />
+        <Button layoutX="300.0" layoutY="477.0" mnemonicParsing="false" onAction="#infoPane" prefHeight="35.0" prefWidth="150.0" text="Изучить деревню" textFill="#331373">
+            <font>
+                <Font size="15.0" />
+            </font></Button>
+        <Button layoutX="102.0" layoutY="477.0" mnemonicParsing="false" onAction="#buildPane" prefHeight="35.0" prefWidth="150.0" text="Строительство" textAlignment="CENTER" textFill="#331373">
+            <font>
+                <Font size="15.0" />
+            </font></Button>
+        <Button disable="true" layoutX="500.0" layoutY="477.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="150.0" text="Торговля" textFill="#331373">
+            <font>
+                <Font size="15.0" />
+            </font></Button>
+        <Button disable="true" layoutX="698.0" layoutY="477.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="150.0" text="Ремесло" textFill="#331373">
+            <font>
+                <Font size="15.0" />
+            </font></Button>
+        <VBox fx:id="infoVBox" alignment="TOP_CENTER" layoutX="325.0" layoutY="140.0" prefHeight="274.0" prefWidth="350.0" visible="false">
+            <children>
+                <Text fill="#ffb505" stroke="#320d7b" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="OUTSIDE" strokeWidth="2.0" text="Ваша деревушка">
+                    <font>
+                        <Font size="30.0" />
+                    </font>
+                </Text>
+                <Button mnemonicParsing="false" onAction="#showBuildingsInTheAreaInfo" prefWidth="200.0" text="Осмотреть деревушку" textFill="#331373">
+                    <VBox.margin>
+                        <Insets top="10.0" />
+                    </VBox.margin>
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </Button>
+                <Button layoutX="158.0" layoutY="50.0" mnemonicParsing="false" onAction="#showTreasuryInfo" prefWidth="200.0" text="Казна" textFill="#331373">
+                    <VBox.margin>
+                        <Insets top="10.0" />
+                    </VBox.margin>
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </Button>
+                <Button layoutX="158.0" layoutY="80.0" mnemonicParsing="false" onAction="#showResourcesInfo" prefWidth="200.0" text="Запасы ресурсов" textFill="#331373">
+                    <VBox.margin>
+                        <Insets top="10.0" />
+                    </VBox.margin>
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </Button>
+                <Button disable="true" layoutX="158.0" layoutY="111.0" mnemonicParsing="false" prefWidth="200.0" text="Запасы изделий " textFill="#331373">
+                    <VBox.margin>
+                        <Insets top="10.0" />
+                    </VBox.margin>
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </Button>
+                <Button layoutX="158.0" layoutY="141.0" mnemonicParsing="false" onAction="#showBuildersInfo" prefWidth="200.0" text="Что там по строителям?" textFill="#331373">
+                    <VBox.margin>
+                        <Insets top="10.0" />
+                    </VBox.margin>
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                </Button>
+            </children>
+        </VBox>
+        <VBox fx:id="buildingVBox" alignment="TOP_CENTER" layoutX="339.0" layoutY="140.0" prefHeight="317.0" prefWidth="322.0" visible="false">
+            <children>
+                <Text fill="#ffb505" fontSmoothingType="LCD" lineSpacing="5.0" stroke="#320d7b" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="OUTSIDE" strokeWidth="2.0" text="Что вы хотите построить?" textAlignment="CENTER" underline="true" wrappingWidth="296.799987077713">
+                    <font>
+                        <Font size="25.0" />
+                    </font>
+                </Text>
+                <Button mnemonicParsing="false" onAction="#buildDwellingHouse" prefHeight="30.0" prefWidth="225.0" text="Жилой дом  - 5 денег" textFill="#331373">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                    <VBox.margin>
+                        <Insets top="10.0" />
+                    </VBox.margin>
+                </Button>
+                <Button disable="true" mnemonicParsing="false" onAction="#buildBuilderHouse" prefWidth="225.0" text="Хижина строителя - 30 денег" textAlignment="RIGHT" textFill="#331373">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                    <VBox.margin>
+                        <Insets top="10.0" />
+                    </VBox.margin>
+                </Button>
+                <Button disable="true" mnemonicParsing="false" onAction="#buildCraftsmanHouse" prefHeight="30.0" prefWidth="225.0" text="Мастерская - 20 денег" textFill="#331373">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                    <VBox.margin>
+                        <Insets top="10.0" />
+                    </VBox.margin>
+                </Button>
+                <Button mnemonicParsing="false" onAction="#buildResourcerer" prefHeight="30.0" prefWidth="225.0" text="Ферма - 30 денег" textFill="#331373">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                    <VBox.margin>
+                        <Insets top="10.0" />
+                    </VBox.margin>
+                </Button>
+                <Button disable="true" mnemonicParsing="false" onAction="#buildCaravanManShop" prefHeight="30.0" prefWidth="225.0" text="Лавка торговца - 10 денег" textFill="#331373">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                    <VBox.margin>
+                        <Insets top="10.0" />
+                    </VBox.margin>
+                </Button>
+                <Button disable="true" mnemonicParsing="false" onAction="#buildDefenseBuilding" prefHeight="30.0" prefWidth="225.0" text="Оборона - 100 денег" textFill="#331373">
+                    <font>
+                        <Font size="15.0" />
+                    </font>
+                    <VBox.margin>
+                        <Insets top="10.0" />
+                    </VBox.margin>
+                </Button>
+            </children>
+        </VBox>
+        <StackPane fx:id="infoStackPane" layoutX="273.0" layoutY="119.0" prefHeight="302.0" prefWidth="454.0" visible="false">
+            <children>
+                <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#574186e8" height="315.0" stroke="BLACK" strokeLineCap="ROUND" strokeType="INSIDE" width="454.0" />
+                <Text fx:id="infoText" fill="#d48d0a" stroke="#a97908" strokeLineCap="ROUND" strokeLineJoin="ROUND" strokeType="OUTSIDE" strokeWidth="0.7" textAlignment="CENTER" wrappingWidth="435.73673129081726">
+                    <font>
+                        <Font size="20.0" />
+                    </font>
+                </Text>
+            </children>
+        </StackPane>
+      <Button layoutX="828.0" layoutY="28.0" mnemonicParsing="false" onAction="#update" prefHeight="31.0" prefWidth="94.0" text="Новый день" />
+    </children>
+</AnchorPane>
